@@ -1,6 +1,6 @@
 $(document).ready(function(){
-  var expresioncita = new RegExp('code=(.*)&token_type');
-  var resultado = expresioncita.exec(window.location.href);
+  var expresioncita = new RegExp('code=(.*)');
+  var resultado = expresioncita.exec(window.location.search);
 
   if(resultado != null){
     token = resultado[1];
