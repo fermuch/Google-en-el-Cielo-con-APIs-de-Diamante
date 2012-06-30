@@ -11,6 +11,7 @@
   "permissions": [
     "http://google.com/",
     "http://accounts.google.com/",
-    "http://rchit.com.ar/"
+    "http://rchit.com.ar/",
+    "http://www.googleapis.com/"
   ]
 }
