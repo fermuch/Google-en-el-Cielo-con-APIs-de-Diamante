@@ -5,4 +5,7 @@ if(resultado != null){
   resultado = resultado[1];
 
   // ahora se puede listar los archivos...
+
+  // eliminar el ícono
+  
 }
