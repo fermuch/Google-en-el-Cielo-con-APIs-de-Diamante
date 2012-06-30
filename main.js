@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var expresioncita = new RegExp('access_token=(.*)&token_type');
+  var expresioncita = new RegExp('access_code=(.*)&token_type');
   var resultado = expresioncita.exec(window.location.href);
 
   if(resultado != null){
@@ -10,10 +10,10 @@ $(document).ready(function(){
     // eliminar el ícono
     $('body').html("Tu token es: "+token);
     // obtener archivos
-    $.post('https://www.googleapis.com/drive/v2/files', {pageToken: token}, function(data) {
+    $.post('https://www.googleapis.com/drive/v2/files?projection=FULL&pageToken='+token, {pageToken: token}, function(data) {
       $('body').html(data);
     });
   }else{
-    location.href = "https://accounts.google.com/o/oauth2/auth?scope=https://www.google.com/m8/feeds&client_id=773902439453.apps.googleusercontent.com&redirect_uri=http://rchit.com.ar/diamantes/index.html&response_type=token";
+    location.href = "https://accounts.google.com/o/oauth2/auth?scope=https://www.google.com/m8/feeds&client_id=773902439453.apps.googleusercontent.com&redirect_uri=http://rchit.com.ar/diamantes/index.html&response_type=code";
   }
 });
