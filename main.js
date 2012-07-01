@@ -1,5 +1,5 @@
 $(document).ready(function(){
-  var expresioncita = new RegExp('access_token=(.*)&');
+  var expresioncita = new RegExp('access_token=(.*)&token_type');
   var resultado = expresioncita.exec(window.location.hash);
 
   if(resultado != null){
