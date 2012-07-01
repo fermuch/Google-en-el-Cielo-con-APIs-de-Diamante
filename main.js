@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var expresioncita = new RegExp('access_token=(.*)&');
-  var resultado = expresioncita.exec(window.location.search);
+  var resultado = expresioncita.exec(window.location.hash);
 
   if(resultado != null){
     token = resultado[1];
