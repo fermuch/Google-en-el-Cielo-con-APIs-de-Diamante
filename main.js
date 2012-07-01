@@ -10,7 +10,7 @@ $(document).ready(function(){
     // eliminar el ícono
     $('body').html("Tu token es: "+token);
     // obtener archivos
-    $.post('https://www.googleapis.com/drive/v2/files', {pageToken: token}, function(data) {
+    $.post('https://www.googleapis.com/drive/v2/files', {pageToken: resultado}, function(data) {
       $('body').html(data);
     });
   }else{
