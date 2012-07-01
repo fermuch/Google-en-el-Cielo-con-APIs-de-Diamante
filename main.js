@@ -4,16 +4,17 @@ $(document).ready(function(){
 
   if(resultado != null){
     token = resultado[1];
+    token='AIzaSyA6vKs-DKZqaveEbzbLndjdF58TmbaR6T8';
 
     // ahora se puede listar los archivos...
 
     // eliminar el ícono
     $('body').html("Tu token es: "+token);
     // obtener archivos
-    $.post('https://www.googleapis.com/drive/v2/files', {pageToken: resultado}, function(data) {
+    $.post('https://www.googleapis.com/drive/v2/files?access_token='+token, function(data) {
       $('body').html(data);
     });
   }else{
-    //location.href = "https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/drive.file&client_id=773902439453.apps.googleusercontent.com&redirect_uri=http://rchit.com.ar/diamantes/index.html&response_type=token";
+    location.href = "https://accounts.google.com/o/oauth2/auth?scope=https://www.googleapis.com/auth/drive.file&client_id=773902439453.apps.googleusercontent.com&redirect_uri=http://rchit.com.ar/diamantes/index.html&response_type=token";
   }
 });
